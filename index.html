@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <!-- Settings -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Style and Site Icon -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">  
+
+  <!-- Title and SEO -->
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <link rel="canonical" href="">
+  <meta name="robots" content="index"/>
+  <meta name="description" 
+    content="">
+</head>
+<!-- Body -->
+<body>
+  <!-- Header -->
+  <header>
+    
+  </header>
+  <!-- End Header -->
+    
+  <!-- Main Content -->
+  <main>
+    <section>
+      <div class="container">
+        <div class="sign-up-state flex-group">
+          <div class="left grid-group">
+            <h1 class="title">Stay updated!</h1>
+            <p class="text">Join 60,000+ product managers receiving monthly updates on:</p>
+
+            <ul class="grid-group">
+              <li>Product discovery and building what matters</li>
+              <li>Measuring to ensure updates are a success</li>
+              <li>And much more!</li>
+            </ul>
+
+            <form action="#" class="grid-group">
+              <div class="email-label flex-group">
+                <label for="email">Email Address</label>
+                <span class="error-text"></span>
+              </div>
+              <input type="text" name="email" id="email" placeholder="email@company.com">
+              <button class="submit-btn btn">Subscribe to monthly newsletter</button>
+            </form>
+          </div>
+
+          <div class="right">
+            <picture>
+              <source class="desktop-img" srcset="assets/images/illustration-sign-up-desktop.svg" media="(min-width: 900px)">
+              <img class="mobile-img" src="assets/images/illustration-sign-up-mobile.svg" alt="Devices and Graphics Image">
+            </picture>
+          </div>
+
+        </div>
+
+        <div class="success-state">
+          <picture>
+            <img class="success-icon" src="assets/images/icon-success.svg" alt="Success Icon">
+          </picture>
+          <h2 class="title">Thanks for subscribing!</h2>
+          <p class="text">A confirmation email has been sent to <span class="show-email"></span>. Please open it and click the button inside to confirm your subscription.</p>
+          <button class="btn close">Dismiss message</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- End Main Content -->
+  
+<!-- Footer -->
+  <footer>
+    
+  </footer>
+<!-- End Footer -->
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+/* General Reset */
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  --webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   line-height: 1;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* End General Reset */
+
+/* General Settings */
+
+@font-face {
+  /* Example */ 
+  font-family: Roboto;
+
+  src:  url('assets/fonts/Roboto-Regular.ttf'),
+        url('assets/fonts/Roboto-Bold.ttf');
+}
+
+:root {
+  /* Primary Colors */
+  --primary: hsl(4, 100%, 67%);
+  --secondary: rgba(255, 98, 87, 0.05);
+
+  /* Neutral Colors */
+  --neutral-1: hsl(0, 0%, 100%);
+  --neutral-2: hsl(231, 7%, 60%);
+  --neutral-3: hsl(235, 18%, 26%);
+  --neutral-4: hsl(234, 29%, 20%);
+
+
+  /* Fonts Family */
+  --ff-body: 'Roboto', sans-serif;
+
+  /* Fonts Weight */
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* Font Size */
+  --fs-body: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* End General Settings */
+
+/* General Styling */
+
+body {
+  background: var(--neutral-4);
+  font-family: var(--ff-body);
+  font-weight: var(--fw-regular);
+  color: var(--neutral-4);
+  font-size: var(--fs-body);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* End General Styling */
+
+/* Utilities */
+
+.flex-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-group {
+  display: grid;
+}
+
+/* End Utilities */
+
+/* Section Style */
+.container {
+  margin: auto;
+  width: fit-content;
+  max-width: 375px;
+  height: fit-content;
+  background: var(--neutral-1);
+}
+
+.sign-up-state {
+  flex-direction: column-reverse;
+}
+
+.left {
+  padding: 2.5rem 1.5rem;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 1px;
+}
+
+ul {
+  list-style: none;
+  gap: 0.5rem;
+}
+
+li {
+  display: flex;
+}
+
+li::before {
+  content: url('assets/images/icon-list.svg');
+  padding-right: 1rem;
+}
+
+form {
+  gap: 1.5rem;
+}
+
+.email-label {
+  margin-top: 1rem;
+  margin-bottom: -1.25rem;
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  justify-content: space-between
+}
+
+.error-text {
+  color: var(--primary);
+}
+
+#email {
+  border: 1px solid var(--neutral-2);
+  outline: none;
+  border-radius: 5px;
+}
+
+#email::placeholder {
+  color: var(--neutral-2);
+}
+
+#email, .btn {
+  padding: 1rem 1.5rem;
+}
+
+.btn {
+  cursor: pointer;
+  color: var(--neutral-1);
+  background: var(--neutral-4);
+  border: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background: var(--primary);
+  transition: 0.15s ease;
+}
+
+.success-state {
+  display: none;
+  align-content: center;
+  gap: 1.5rem;
+
+  height: 90dvh;
+  padding-inline: 1.5rem;
+
+  position: relative;
+}
+
+.success-icon {
+  margin-top: -10dvh;
+}
+
+.show-email {
+  font-weight: var(--fw-bold);
+}
+
+.close {
+  position: absolute;
+  bottom: 2.5%;
+  left: 0.75rem;
+  width: calc(375px - 1.5rem);
+}
+
+@media screen and (min-width:900px) {
+  .container {
+    max-width: 900px;
+    padding: 1rem;
+    border-radius: 25px;
+  }
+
+  .sign-up-state {
+    flex-direction: row;
+  }
+
+  .left {
+    flex: 50%;
+    padding-inline: 2rem;
+
+    display: grid;
+    align-content: center;
+  }
+
+  .right {
+    flex: 50%;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .right picture {
+    display: grid;
+    justify-content: end
+  }
+
+  .success-state {
+    width: 500px;
+    height: fit-content;
+    padding: 2.5rem 3rem;
+
+    gap: 2rem; 
+
+    position:static;
+  }
+
+  .success-icon {
+    margin-top: 0;
+  }
+
+  .close {
+    width: 100%;
+    position: static;
+  }
+}
+
+/* End Section Style */
+
+/* Animations */ 
+.scale-up {
+  transform: scale(0.75);
+  opacity: 0;
+  animation: scale-up 0.5s ease forwards;
+}
+
+@keyframes scale-up {
+  100% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}
+
+/* Animations End */
